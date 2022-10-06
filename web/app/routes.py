@@ -72,9 +72,7 @@ def notification():
             ## Code below will be replaced by a message queue
             #################################################
 
-            notification_id = notification.id
-
-            msg = Message(str(notification_id))
+            msg = Message(str(notification.id))
             queue_client.send(msg)    
 
             attendees = Attendee.query.all()
