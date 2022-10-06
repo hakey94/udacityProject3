@@ -72,15 +72,16 @@ def notification():
             ## Code below will be replaced by a message queue
             #################################################
 
-            msg = Message(str(notification.id))
+            notification_id = notification.id
 
-            queue_client.send(msg)        
+            msg = Message(str(notification_id))
+            queue_client.send(msg)    
 
             attendees = Attendee.query.all()
 
-            for attendee in attendees:
-                subject = '{}: {}'.format(attendee.first_name, notification.subject)
-                send_email(attendee.email, subject, notification.message)
+            # for attendee in attendees:
+            #     subject = '{}: {}'.format(attendee.first_name, notification.subject)
+            #     send_email(attendee.email, subject, notification.message)
 
             notification.completed_date = datetime.utcnow()
             notification.status = 'Notified {} attendees'.format(len(attendees))

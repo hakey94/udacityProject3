@@ -70,8 +70,8 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
 For some reason i select for both Azure web app and Azure Function.
-Firstable: This app has function that allow user register slot for join the workshop, then it will send an email to confirm that user has been invited. 
+Firstable: This app has function that allow user register slot for join the workshop, then it will send an email to users who regiter to join workshop. 
 So the web app will process register and sending queue, so free tier service is good enough to manage.
-Secondly: I am using Azure function App as Serverless tier that allow payment depend on how many email has been sending to user, so it much more cheaper because we dont have much user
-Third: Actually i am using default setting of basic tier when choose Postgres database, i believe that cost is good enough and it help the system run without downtime.
+Secondly: I am using Azure function App as Serverless tier that allow payment depend on how many email has been sending to user, so it much more cheaper because we dont have much user.
+Thirdly: Actually i am using default setting of basic tier when choose Postgres database, i believe that cost is good enough and it help the system run without downtime.
 For all reason, i think that architecture plan is good for solutions.
